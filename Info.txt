@@ -1,0 +1,28 @@
+
+https://github.com/callicoder/spring-boot-log4j-2-demo
+https://howtodoinjava.com/spring-boot2/spring-boot-log4j2-config/
+
+1)Remove spring’s default logging dependency (LogBack) and then add log4j2 dependency in pom.xml
+
+        <!-- Exclude Spring Boot's Default Logging -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Add Log4j2 Dependency -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		
+2)Add log4j2.xml file in resources folder
+
+  Spring will automatically configure log4j2 once it finds it’s jar files in classpath. 
+  Now we have to add log4j2.xml or (log4j2.properties) in src/main/resources folder
